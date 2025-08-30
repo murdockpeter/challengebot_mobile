@@ -1,0 +1,52 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Visual Studio Code
+.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+
+# Generated plugin registration
+lib/generated_plugin_registrant.dart
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+ios/Runner/GeneratedPluginRegistrant.h
+ios/Runner/GeneratedPluginRegistrant.m
+macos/Runner/GeneratedPluginRegistrant.swift
+
+# Platform-specific files
+ios/Pods/
+ios/Flutter/App.framework
+ios/Flutter/engine.xcframework
+ios/Flutter/flutter_assets/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+android/key.properties
+android/local.properties
+android/app/build/
+android/.gradle/
+
+# It's recommended to not commit Firebase config files to public repositories.
+# For private repos, you might choose to commit them for convenience.
+lib/firebase_options.dart
+android/app/google-services.json
+firebase.json
