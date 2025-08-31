@@ -42,12 +42,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyCRFFdqPUhDY_3MDn2AJ8zxYfkrZv-ML9w',
-    appId: '1:187122410721:web:44c0e7c171bf13b327c3a0',
+    appId: '1:187122410721:web:1a12492abff387db27c3a0',
     messagingSenderId: '187122410721',
     projectId: 'challengebot-b9411',
     authDomain: 'challengebot-b9411.firebaseapp.com',
     storageBucket: 'challengebot-b9411.firebasestorage.app',
-    measurementId: 'G-QDS4E7H03B',
+    measurementId: 'G-TMCQSXN9P1',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
