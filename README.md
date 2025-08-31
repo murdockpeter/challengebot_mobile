@@ -1,52 +1,59 @@
-# ChallengeBot Mobile
+# Challenge Tracker App
 
-A Flutter-based mobile application for viewing and managing game challenges. This app connects to a Firebase backend to display a real-time list of challenges between players.
+A Flutter application built to display and track game challenges from a Firebase Firestore database.
 
-## About This Project
+## 🚀 Features
 
-This project serves as the mobile client for the ChallengeBot system. It's built with Flutter, allowing for a cross-platform experience on both Android and iOS from a single codebase. It currently displays a list of ongoing, completed, and cancelled challenges.
+- **Real-time Updates**: Connects to a Firestore collection named `challenges` and displays a live-updating list.
+- **Informative UI**: Each challenge is displayed in a `Card` showing:
+  - The name of the game being played.
+  - The matchup: `Challenger vs. Opponent`.
+  - A colored `Chip` indicating the challenge status (e.g., pending, completed, cancelled).
+- **Clean Architecture**: Uses a `StreamBuilder` for efficient, real-time data handling from Firebase.
 
-## Getting Started
+## 🛠️ Getting Started
 
-To get a local copy up and running, follow these simple steps.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing.
 
 ### Prerequisites
 
--   Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
--   A configured IDE like VS Code or Android Studio.
--   Access to the Firebase project or your own Firebase project set up.
+- Flutter SDK installed on your machine.
+- A Google account to create a Firebase Project.
+- An Android Emulator or a physical Android device.
 
-### Installation
+### Installation and Setup
 
-1.  **Clone the repo**
+1.  **Clone the repository** to your local machine.
     ```sh
-    git clone https://github.com/murdockpeter/challengebot_mobile.git
+    git clone <your-repository-url>
+    cd flutter_application_1
     ```
-2.  **Navigate to the project directory**
-    ```sh
-    cd challengebot_mobile
-    ```
-3.  **Install dependencies**
+
+2.  **Install Flutter dependencies**:
     ```sh
     flutter pub get
     ```
-4.  **Set up Firebase**
-    You will need to configure Firebase for your local build. Ensure you have the appropriate `google-services.json` (for Android) and `firebase_options.dart` files for your project. You can generate these from your Firebase project console.
-    *Note: These files are included in the `.gitignore` for security and are not committed to the repository.*
 
-5.  **Run the app**
+3.  **Configure Firebase**:
+    This project is configured to work with Firebase. You must provide your own Firebase configuration files.
+
+    - Create a new project in the Firebase Console.
+    - Add an **Android app** to your Firebase project.
+    - Follow the setup instructions to download the `google-services.json` file.
+    - Place the `google-services.json` file in the `android/app/` directory of this project.
+    - **Important**: The `google-services.json` file is intentionally not included in version control for security.
+
+4.  **Run the app**:
+    Connect your device/emulator and run the following command from the project root:
     ```sh
     flutter run
     ```
 
-## Project Structure
+## 🔥 Firestore Data Structure
 
-The project follows a standard Flutter structure, with the core application logic located in the `lib` directory.
+The application expects a collection named `challenges` in your Firestore database. Each document within this collection should have a structure that includes the following fields, which are used to build the UI:
 
--   `lib/models/`: Contains the data models that represent the Firestore documents (e.g., `challenge_model.dart`).
--   `lib/screens/`: Contains the UI widgets for each screen of the application (e.g., `challenge_list_screen.dart`).
--   `pubspec.yaml`: Defines the project's dependencies, including `cloud_firestore`.
-
-## Backend
-
-This application is powered by Google Cloud Firestore for its real-time database capabilities. The data is structured in a `challenges` collection, with each document representing a single challenge. The `Challenge` model in `lib/models/challenge_model.dart` directly maps to the structure of these documents.
+- `game` (String)
+- `challenger_name` (String)
+- `opponent_name` (String)
+- `status` (String) - e.g., "pending", "accepted", "completed", "cancelled"
